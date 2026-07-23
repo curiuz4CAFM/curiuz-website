@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 import {
@@ -51,15 +50,13 @@ export function Header() {
       }`}
     >
       <div className="wrap flex h-[72px] items-center justify-between md:h-20">
-        {/* Logo */}
+        {/* Logo — navy version on light bar, reversed version over the dark hero */}
         <Link href="/" className="flex items-center" aria-label="Curiuz Technologies — home">
-          <Image
-            src="/logo/curiuz-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={solid ? '/logo/curiuz-primary.svg' : '/logo/curiuz-reversed.svg'}
             alt="Curiuz Technologies"
-            width={2132}
-            height={1025}
-            priority
-            className={`h-14 w-auto md:h-[64px] ${solid ? '' : '[filter:brightness(0)_invert(1)]'}`}
+            className="h-12 w-auto md:h-16"
           />
         </Link>
 

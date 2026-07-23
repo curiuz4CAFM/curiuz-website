@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { MapPin } from 'lucide-react'
 import {
   PREMYZ_SUITES, CURIUZ_PILLARS, premyzSuiteUrl, serviceUrl, PREMYZ_SOLUTIONS, PREMYZ_DEMO,
@@ -11,13 +10,8 @@ export function Footer() {
       <div className="wrap grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link href="/" className="inline-flex items-center" aria-label="Curiuz Technologies — home">
-            <Image
-              src="/logo/curiuz-logo.png"
-              alt="Curiuz Technologies"
-              width={2132}
-              height={1025}
-              className="h-11 w-auto [filter:brightness(0)_invert(1)]"
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo/curiuz-reversed.svg" alt="Curiuz Technologies" className="h-14 w-auto" />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             Powered by Curiosity. Enabled by AI. Business transformation advisory — and the makers of Premyz.

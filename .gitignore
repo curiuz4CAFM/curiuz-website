@@ -28,8 +28,7 @@ yarn-error.log*
 *.pem
 Thumbs.db
 
-# large source assets kept locally, not needed at runtime
-# (the versions the site actually uses live in /public)
-/lib/*.mp4
-/lib/Curiuz Technologies Logo Concepts/
-/lib/Curiuz Technologies logo designs Final 2/
+# lib/ holds local-only source assets (videos, logo packs, zips).
+# Only site-data.ts is needed at build time — ignore everything else.
+/lib/*
+!/lib/site-data.ts

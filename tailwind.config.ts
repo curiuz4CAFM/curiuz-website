@@ -5,25 +5,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ── CURIUZ TECHNOLOGIES (brand) — deep navy base (from the logo) ──
+        // ── CURIUZ TECHNOLOGIES (brand) — navy base ──
         ink: {
-          DEFAULT: '#0A1A48',
-          950: '#060F2E',
-          900: '#0A1A48',
-          800: '#122352',
-          700: '#1C3068',
+          DEFAULT: '#10233B',
+          950: '#0B1A2E',
+          900: '#10233B',
+          800: '#17304C',
+          700: '#20405F',
         },
-        // Royal blue — Curiuz primary accent (the "Z" in the logo)
+        // Ember / terracotta — Curiuz brand accent
         curi: {
-          DEFAULT: '#3D5AA9',
-          600: '#324B8C',
-          500: '#4D68B5',
-          400: '#7A90CC',
-          100: '#E2E7F4',
-          50: '#F1F4FB',
+          DEFAULT: '#E07A5F',
+          600: '#C2603F',
+          500: '#E88C74',
+          400: '#EDA48F',
+          100: '#FBE5DD',
+          50: '#FDF4F0',
         },
-        // Gold "spark" — signature highlight (the logo dot)
-        spark: '#F2B01E',
+        // Warm "spark" — used sparingly for highlights
+        spark: '#F2B07A',
 
         // ── PREMYZ (endorsed product) — exact product tokens ──
         navy: { DEFAULT: '#0B1B33', 900: '#091C3E', 800: '#0F2A52', 700: '#1E3A66' },
@@ -41,13 +41,13 @@ const config: Config = {
       },
       maxWidth: { content: '1200px' },
       boxShadow: {
-        card: '0 1px 2px rgba(10,26,72,0.04), 0 14px 36px -18px rgba(10,26,72,0.18)',
-        'card-hover': '0 6px 12px rgba(10,26,72,0.07), 0 28px 56px -24px rgba(61,90,169,0.30)',
-        glowc: '0 0 60px -10px rgba(61,90,169,0.50)',
+        card: '0 1px 2px rgba(16,35,59,0.04), 0 14px 36px -18px rgba(16,35,59,0.18)',
+        'card-hover': '0 6px 12px rgba(16,35,59,0.07), 0 28px 56px -24px rgba(224,122,95,0.30)',
+        glowc: '0 0 60px -10px rgba(224,122,95,0.50)',
         glowp: '0 0 60px -10px rgba(0,198,255,0.5)',
       },
       backgroundImage: {
-        'curi-grad': 'linear-gradient(135deg, #3D5AA9 0%, #F2B01E 100%)',
+        'curi-grad': 'linear-gradient(135deg, #E07A5F 0%, #C2603F 100%)',
         'premyz-grad': 'linear-gradient(135deg, #0057FF 0%, #00C6FF 100%)',
       },
       keyframes: {

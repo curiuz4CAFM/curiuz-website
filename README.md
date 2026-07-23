@@ -49,3 +49,5 @@ On Vercel: Project → Settings → Environment Variables. Without it, the form 
 Navy `#10233b` + ember `#e07a5f`, from the Curiuz Technologies logo. Premyz sections use blue/cyan to stay distinct under the parent brand.
 
 <!-- deployed via GitHub → Vercel integration -->
+
+_Auto-deploy test: 95db3bd_

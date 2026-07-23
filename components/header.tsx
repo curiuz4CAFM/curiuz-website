@@ -5,9 +5,10 @@ import { useState, useEffect, useRef } from 'react'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 import {
   PREMYZ_SUITES, premyzSuiteUrl, PREMYZ_DEMO, CURIUZ_PILLARS, serviceUrl,
+  ABOUT_LINKS, aboutUrl,
 } from '@/lib/site-data'
 
-type MenuName = 'products' | 'services' | null
+type MenuName = 'about' | 'products' | 'services' | null
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -62,7 +63,16 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
-          <NavItem href="/#about" solid={solid}>About</NavItem>
+          {/* About — homepage section + mega-menu of sub-pages */}
+          <MenuTrigger
+            label="About"
+            href="/#about"
+            active={menu === 'about'}
+            solid={solid}
+            onOpen={() => openMenu('about')}
+            onClose={closeSoon}
+            onClick={() => setMenu(null)}
+          />
 
           {/* Products — links to the internal teaser; hover opens the mega-menu */}
           <MenuTrigger
@@ -106,6 +116,52 @@ export function Header() {
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+
+      {/* ── About mega-menu ── */}
+      {menu === 'about' && (
+        <MegaWrap onOpen={() => openMenu('about')} onClose={closeSoon}>
+          <div className="grid grid-cols-[1.1fr_2.4fr]">
+            {/* Left: intro */}
+            <div className="relative flex flex-col justify-between overflow-hidden bg-ink-950 p-7 text-white">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-curi-grad opacity-30 blur-3xl" />
+              <div className="relative">
+                <span className="font-display text-lg font-bold">Think Forward</span>
+                <p className="mt-3 text-sm leading-relaxed text-white/70">
+                  Powered by curiosity. Enabled by AI. The philosophy, values and people behind Curiuz.
+                </p>
+              </div>
+              <Link
+                href="/#about"
+                onClick={() => setMenu(null)}
+                className="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold text-curi-400 hover:gap-3"
+              >
+                About Curiuz <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            {/* Right: about sub-pages */}
+            <div className="grid grid-cols-1 gap-1 p-4 sm:grid-cols-3">
+              {ABOUT_LINKS.map((l) => {
+                const Icon = l.icon
+                return (
+                  <Link
+                    key={l.slug}
+                    href={aboutUrl(l.slug)}
+                    onClick={() => setMenu(null)}
+                    className="group flex flex-col gap-2 rounded-xl p-3 transition-colors hover:bg-mist"
+                  >
+                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-curi-50 text-curi transition-colors group-hover:bg-curi-grad group-hover:text-white">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="block text-sm font-semibold text-ink">{l.label}</span>
+                    <span className="block text-xs leading-snug text-slatey">{l.desc}</span>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </MegaWrap>
+      )}
 
       {/* ── Products mega-menu ── */}
       {menu === 'products' && (
@@ -229,6 +285,11 @@ export function Header() {
         <div className="max-h-[calc(100vh-72px)] overflow-y-auto border-t border-line bg-white md:hidden">
           <nav className="wrap flex flex-col py-4">
             <MobileLink href="/#about" onClick={() => setMobileOpen(false)}>About</MobileLink>
+            {ABOUT_LINKS.map((l) => (
+              <MobileSub key={l.slug} href={aboutUrl(l.slug)} onClick={() => setMobileOpen(false)}>
+                {l.label}
+              </MobileSub>
+            ))}
             <MobileLink href="/products/premyz" onClick={() => setMobileOpen(false)}>Products — Premyz</MobileLink>
 
             <MobileLink href="/services" onClick={() => setMobileOpen(false)}>Services</MobileLink>

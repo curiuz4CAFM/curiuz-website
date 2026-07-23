@@ -4,6 +4,7 @@ import { Check, ArrowRight, Quote, Sparkles, Eye, Compass, Gem } from 'lucide-re
 import { Reveal } from '@/components/reveal'
 import {
   CURIUZ_PILLARS, CURIUZ_PROCESS, CURIUZ_WHY, CURIUZ_SEGMENTS, CURIUZ_INDUSTRIES, serviceUrl,
+  ABOUT_LINKS, aboutUrl,
 } from '@/lib/site-data'
 
 /* ─────────────────── WHY NOW — MARKET INSIGHT + FORWARD THINKING ─────────────────── */
@@ -104,8 +105,31 @@ export function AboutBand() {
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slatey">
             We believe the best transformations begin with curiosity — asking the right questions before designing
-            solutions.
+            solutions. It’s a philosophy we call <strong className="font-semibold text-ink">Think Forward</strong>.
           </p>
+          <p className="mt-5 font-display text-xl font-bold leading-snug text-ink">
+            Curiosity drives transformation. <span className="bg-curi-grad bg-clip-text text-transparent">Thinking forward delivers it.</span>
+          </p>
+
+          {/* About sub-pages */}
+          <div className="mt-6 grid gap-2 sm:grid-cols-3">
+            {ABOUT_LINKS.map((l) => {
+              const Icon = l.icon
+              return (
+                <Link
+                  key={l.slug}
+                  href={aboutUrl(l.slug)}
+                  className="group flex items-center gap-2.5 rounded-xl border border-line bg-white px-3.5 py-3 transition-colors hover:border-curi/40 hover:bg-mist"
+                >
+                  <span className="grid h-8 w-8 flex-none place-items-center rounded-lg bg-curi-50 text-curi transition-colors group-hover:bg-curi-grad group-hover:text-white">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm font-semibold text-ink">{l.label}</span>
+                </Link>
+              )
+            })}
+          </div>
+
           <div className="mt-7 flex flex-wrap gap-3">
             <a href="#what-we-do" className="btn-primary">
               What we do <ArrowRight className="h-4 w-4" />

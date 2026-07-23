@@ -5,6 +5,7 @@ import {
   Workflow, Gauge, ServerCog, ClipboardCheck, Search, PenTool,
   Target, ShieldCheck, UserCog, Lightbulb, TrendingUp, Network,
   Recycle, AlertTriangle, HelpCircle,
+  Eye, Award, RefreshCw, HeartHandshake, Gem, Handshake,
 } from 'lucide-react'
 
 /** The 10 Premyz solution suites (25+ modules) — the product spine.
@@ -374,3 +375,75 @@ export const MARKET_INSIGHTS: {
 
 /** The curiosity hook that ties the insight section together. */
 export const CURIOSITY_ICON = HelpCircle
+
+/* ─────────────────────────── ABOUT ─────────────────────────── */
+
+/** About sub-navigation (mega-menu + pages). */
+export const ABOUT_LINKS: { label: string; slug: string; desc: string; icon: LucideIcon }[] = [
+  { label: 'Our Philosophy', slug: 'philosophy', desc: 'Think Forward — how curiosity and AI shape what’s next.', icon: Lightbulb },
+  { label: 'Our Values', slug: 'values', desc: 'The seven principles behind every engagement.', icon: HeartHandshake },
+  { label: 'Founder', slug: 'founder', desc: 'Meet Manish Jha, Founder & CEO of Curiuz.', icon: UserCog },
+]
+export const aboutUrl = (slug: string) => `/about/${slug}`
+
+/** Our Philosophy — "Think Forward". */
+export const PHILOSOPHY = {
+  kicker: 'Powered by Curiosity. Enabled by AI.',
+  belief: 'Curiosity drives transformation. Thinking forward delivers it.',
+  intro: [
+    'Think Forward is our philosophy for shaping what’s next — not reacting to what’s now. We believe the organizations that keep questioning, learning and evolving are the ones that lead. So we start where others stop: with the right questions.',
+    'In a world defined by rapid technological shifts and constant disruption, reactive thinking is no longer enough. Businesses need to anticipate change, adapt with speed, and decide with clarity. That is where our philosophy comes to life — through a deliberate fusion of human curiosity and artificial intelligence.',
+  ],
+  sections: [
+    {
+      title: 'Curiosity as the catalyst',
+      body: 'Curiosity pushes us past the obvious — to challenge legacy assumptions and surface the possibilities others overlook. We immerse ourselves in your ecosystem, understanding not just systems and processes but the intent and ambition behind them. The right question is often more powerful than the quick answer.',
+    },
+    {
+      title: 'AI as the enabler',
+      body: 'Curiosity sets the direction; AI multiplies the capability. We turn data into decisions — moving you from hindsight to foresight with predictive, prescriptive strategies. Our use of AI is pragmatic and outcome-focused: deployed where it creates tangible value, never for novelty’s sake.',
+    },
+    {
+      title: 'From insight to impact',
+      body: 'Philosophy means little without execution. We close the gap between strategy and delivery, translating every idea into outcomes that are measurable, scalable and built to last — whether that’s optimizing a process, implementing an enterprise system, or standing up a digital platform.',
+    },
+  ],
+  pillars: [
+    { name: 'Curiosity-Driven Thinking', desc: 'We question deeply and explore widely, challenging convention to uncover new possibilities.', icon: Eye },
+    { name: 'AI-Enabled Intelligence', desc: 'We harness data, analytics and automation for smarter, faster decisions.', icon: BrainCircuit },
+    { name: 'Future-Ready Design', desc: 'We build solutions that scale, adapt and stay resilient as needs evolve.', icon: Layers },
+    { name: 'Proactive Transformation', desc: 'We anticipate change and act ahead of disruption — not after it.', icon: Rocket },
+    { name: 'Value-Centric Execution', desc: 'We measure success in outcomes: sustained, tangible business value.', icon: Target },
+  ],
+}
+
+/** Our Values — the seven principles. */
+export const CURIUZ_VALUES: { name: string; desc: string; icon: LucideIcon }[] = [
+  { name: 'Curiosity with Purpose', desc: 'Curiosity is the foundation of innovation — but ours is deliberate, aimed squarely at insights that change outcomes.', icon: Lightbulb },
+  { name: 'Client-Centric Thinking', desc: 'Your success defines ours. We craft strategies tailored to your goals — never generic answers.', icon: HeartHandshake },
+  { name: 'Intelligence through AI & Data', desc: 'We pair human expertise with responsible AI to move you from intuition-led action to insight-led strategy.', icon: BrainCircuit },
+  { name: 'Excellence in Execution', desc: 'Ideas create value only when delivered. We bring discipline, rigor and accountability to every engagement.', icon: Award },
+  { name: 'Integrity & Transparency', desc: 'Trust is the core of every partnership. We operate with honesty, clarity and openness — always.', icon: ShieldCheck },
+  { name: 'Agility & Adaptability', desc: 'In a fast-changing world we stay flexible, refining our approach as conditions and priorities shift.', icon: RefreshCw },
+  { name: 'Value-Driven Mindset', desc: 'Every recommendation ties to tangible impact — efficiency, cost, experience or growth.', icon: Gem },
+]
+
+/** Founder. */
+export const FOUNDER = {
+  name: 'Manish Jha',
+  role: 'Founder & CEO',
+  lead: 'A technology leader with 25+ years turning enterprise technology and AI into measurable business value.',
+  bio: [
+    'Manish founded Curiuz to pair deep consulting expertise with hands-on execution — helping organizations move from ambition to outcome. His work spans digital transformation, enterprise technology and AI-driven innovation across diverse industries and geographies.',
+    'Over his career he has held leadership roles at global firms including EY and Avery Dennison, and leading GCC organizations such as Imdaad and HITEK.AI. He has advised CXOs on IT strategy, led large-scale Oracle and enterprise-platform transformations, and delivered complex, multi-million-dollar programs across ERP, CAFM, CRM and AI enablement.',
+    'His signature is aligning technology to business outcomes — building high-performing teams and driving sustained operational excellence, not one-off wins.',
+  ],
+  quote: 'We start where others stop — by asking the right questions.',
+  highlights: [
+    { label: '25+ years', desc: 'Digital transformation & enterprise technology' },
+    { label: 'EY · Avery Dennison', desc: 'Global consulting & enterprise leadership' },
+    { label: 'Imdaad · HITEK.AI', desc: 'Leading GCC transformation roles' },
+    { label: 'ERP · CAFM · CRM · AI', desc: 'Multi-million-dollar program delivery' },
+  ],
+  expertise: ['Digital transformation', 'AI enablement', 'Oracle & ERP', 'CAFM', 'CRM', 'IT strategy', 'Programme governance', 'Team building'],
+}

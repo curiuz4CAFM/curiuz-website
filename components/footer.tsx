@@ -37,8 +37,9 @@ export function Footer() {
         </FooterCol>
 
         <FooterCol title="Company">
-          <FooterLink href="/#about">About</FooterLink>
-          <FooterLink href="/#resources">Blog</FooterLink>
+          <FooterLink href="/about/philosophy">Our Philosophy</FooterLink>
+          <FooterLink href="/about/values">Our Values</FooterLink>
+          <FooterLink href="/about/founder">Founder</FooterLink>
           <FooterLink href="/contact">Contact</FooterLink>
           <FooterLink href={PREMYZ_DEMO}>Book a demo</FooterLink>
           <FooterLink href="#">Privacy Policy</FooterLink>
